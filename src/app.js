@@ -6,7 +6,7 @@ const wheather = require('./wheather');
 const location = process.argv[2];
 
 const app = express(); 
-
+const port = process.env.PORT || 3000
 // define path for express config
 const viewLocation = path.join(__dirname,'./template/views');
 const flePath = path.join(__dirname,'../public');
@@ -83,6 +83,6 @@ app.get('*',(req,res) => {
     })
 })
 
-app.listen(3010,() => {
-    console.log('server is up')
-})
+app.listen(port, () => {
+  console.log("server is up");
+});
